@@ -1,2 +1,1 @@
-# mpr121-androidthings
-MPR121 driver for Android Things
+# MPR121 driver for Android Things
