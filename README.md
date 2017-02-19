@@ -23,7 +23,6 @@ try {
 }
 
 // Override key event callbacks in your Activity:
-
 @Override
 public boolean onKeyDown(int keyCode, KeyEvent event) {
     switch (keyCode) {
@@ -36,7 +35,6 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 }
 
 // Unregister and close the input driver when finished:
-
 mInputDriver.unregister;
 try {
     mInputDriver.close();
@@ -58,11 +56,18 @@ int data = peripheralDevice.getTouched();
 
 // Loop to check the state of these electrodes
 // Ideally, place this code in a thread to check continuously and add a listener when a state changes
+boolean[] inputStatus = new boolean[Mpr121.NB_ELECTRODES];
 for (int i = 0; i < Mpr121.NB_ELECTRODES; i++) {
     if ((data & (1 << i)) != 0) {
-        Log.d(TAG, "#" + i + " touched");
+        if (!inputStatus[i]) {
+            Log.d(TAG, "#" + i + " touched");
+            inputStatus[i] = true;
+        }
     } else {
-        Log.d(TAG, "#" + i + " released");
+        if (inputStatus[i]) {
+            Log.d(TAG, "#" + i + " released");
+            inputStatus[i] = false;
+        }
     }
 }
 
