@@ -74,3 +74,13 @@ for (int i = 0; i < Mpr121.NB_ELECTRODES; i++) {
 // Finally, close the driver
 peripheralDevice.close();
 ```
+
+## Sample project
+
+The sample project uses a passive buzzer to play a sound when an electrode is touched.
+
+### Schematic:
+
+![photo](https://raw.githubusercontent.com/Nilhcem/mpr121-androidthings/master/schematic.png)
+
+If you prefer playing a real sound file instead (e.g.: wav/mp3), use the `SoundPoolHelper` instead of the `PassiveBuzzerHelper` in the `MainActivity`, and place your assets in `res/raw` (from: `res/raw/sound0.mp3` to: `res/raw/sound11.mp3`)
