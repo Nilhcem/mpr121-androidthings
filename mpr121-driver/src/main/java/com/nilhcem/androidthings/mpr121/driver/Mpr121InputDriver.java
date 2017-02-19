@@ -32,7 +32,6 @@ public class Mpr121InputDriver implements AutoCloseable {
 
     /**
      * Callback invoked to poll the state of the controller
-     * interrupt in software.
      */
     private final Runnable pollingCallback = new Runnable() {
         @Override
