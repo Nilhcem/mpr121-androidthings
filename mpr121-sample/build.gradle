@@ -21,5 +21,5 @@ android {
 dependencies {
     compile project(':mpr121-driver')
     provided deps.androidthings
-    compile 'com.google.android.things.contrib:driver-pwmspeaker:0.1'
+    compile 'com.google.android.things.contrib:driver-pwmspeaker:0.2'
 }

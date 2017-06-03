@@ -108,7 +108,7 @@ public class Mpr121InputDriver implements AutoCloseable {
     public void register() {
         if (inputDriver == null) {
             UserDriverManager manager = UserDriverManager.getManager();
-            inputDriver = InputDriver.builder(InputDevice.SOURCE_CLASS_BUTTON)
+            inputDriver = new InputDriver.Builder(InputDevice.SOURCE_CLASS_BUTTON)
                     .setName(DRIVER_NAME)
                     .setVersion(DRIVER_VERSION)
                     .setKeys(keycodes)

@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.2'
     }
 }
 
@@ -18,11 +18,11 @@ ext {
     minSdkVersion = 24
     targetSdkVersion = 25
     compileSdkVersion = 25
-    buildToolsVersion = '25.0.2'
+    buildToolsVersion = '25.0.3'
     sourceCompatibilityVersion = JavaVersion.VERSION_1_7
     targetCompatibilityVersion = JavaVersion.VERSION_1_7
 }
 
 ext.deps = [
-        androidthings: 'com.google.android.things:androidthings:0.2-devpreview'
+        androidthings: 'com.google.android.things:androidthings:0.4-devpreview'
 ]
