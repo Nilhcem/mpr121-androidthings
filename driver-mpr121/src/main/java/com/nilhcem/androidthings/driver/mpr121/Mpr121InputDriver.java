@@ -1,4 +1,4 @@
-package com.nilhcem.androidthings.mpr121.driver;
+package com.nilhcem.androidthings.driver.mpr121;
 
 import android.os.Handler;
 import android.os.Looper;

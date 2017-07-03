@@ -1,4 +1,4 @@
-package com.nilhcem.androidthings.mpr121.driver;
+package com.nilhcem.androidthings.driver.mpr121;
 
 import com.google.android.things.pio.I2cDevice;
 import com.google.android.things.pio.PeripheralManagerService;

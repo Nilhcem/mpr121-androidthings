@@ -1,1 +1,1 @@
-include ':mpr121-driver', ':mpr121-sample'
+include ':driver-mpr121', ':sample'

@@ -1,4 +1,4 @@
-package com.nilhcem.androidthings.mpr121.sample;
+package com.nilhcem.androidthings.driver.mpr121.sample;
 
 import android.content.Context;
 import android.media.AudioAttributes;

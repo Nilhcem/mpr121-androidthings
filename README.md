@@ -1,6 +1,15 @@
-# MPR121 driver for Android Things
+# MPR121 capacitive touch sensor driver for Android Things
 
-Port of the [Adafruit MPR121](https://github.com/adafruit/Adafruit_MPR121/) or Android Things.
+A port of the [Adafruit MPR121][adafruit-mpr121] Arduino library for Android Things.
+
+
+## Download
+
+```groovy
+dependencies {
+    compile 'com.nilhcem.androidthings:driver-mpr121:0.0.1'
+}
+```
 
 ## Usage
 
@@ -81,6 +90,9 @@ The sample project uses a passive buzzer to play a sound when an electrode is to
 
 ### Schematic:
 
-![photo](https://raw.githubusercontent.com/Nilhcem/mpr121-androidthings/master/schematic.png)
+![schematic][]
 
 If you prefer playing a real sound file instead (e.g.: wav/mp3), use the `SoundPoolHelper` instead of the `PassiveBuzzerHelper` in the `MainActivity`, and place your assets in `res/raw` (from: `res/raw/sound0.mp3` to: `res/raw/sound11.mp3`)
+
+[adafruit-mpr121]: https://github.com/adafruit/Adafruit_MPR121/
+[schematic]: https://raw.githubusercontent.com/Nilhcem/mpr121-androidthings/master/assets/schematic.png

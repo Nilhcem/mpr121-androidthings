@@ -1,4 +1,4 @@
-package com.nilhcem.androidthings.mpr121.sample;
+package com.nilhcem.androidthings.driver.mpr121.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.view.KeyEvent;
 
 import java.io.IOException;
 
-public class MainActivity extends Activity {
+public class SampleActivity extends Activity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = SampleActivity.class.getSimpleName();
     private static final String MPR121_I2C = "I2C1";
     private static final String BUZZER_GPIO = "PWM1";
 

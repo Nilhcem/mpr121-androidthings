@@ -1,11 +1,11 @@
-package com.nilhcem.androidthings.mpr121.sample;
+package com.nilhcem.androidthings.driver.mpr121.sample;
 
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.nilhcem.androidthings.mpr121.driver.Mpr121InputDriver;
+import com.nilhcem.androidthings.driver.mpr121.Mpr121InputDriver;
 
 import java.io.IOException;
 
