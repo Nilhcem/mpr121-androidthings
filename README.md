@@ -7,7 +7,7 @@ A port of the [Adafruit MPR121][adafruit-mpr121] Arduino library for Android Thi
 
 ```groovy
 dependencies {
-    compile 'com.nilhcem.androidthings:driver-mpr121:0.0.1'
+    compile 'com.nilhcem.androidthings:driver-mpr121:0.0.2'
 }
 ```
 
