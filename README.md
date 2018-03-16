@@ -52,6 +52,12 @@ try {
 }
 ```
 
+Also, don't forget to add the required permission to your app's manifest file:
+
+```xml
+<uses-permission android:name="com.google.android.things.permission.MANAGE_INPUT_DRIVERS" />
+```
+
 ### Calling the driver manually
 
 You can call the `Mpr121` class directly if you prefer not to receive events from the system:

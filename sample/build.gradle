@@ -14,7 +14,7 @@ android {
 }
 
 dependencies {
-    provided rootProject.ext.dependencies['androidthings']
-    compile project(':driver-mpr121')
-    compile 'com.google.android.things.contrib:driver-pwmspeaker:0.2'
+    compileOnly rootProject.ext.dependencies['androidthings']
+    implementation project(':driver-mpr121')
+    implementation 'com.google.android.things.contrib:driver-pwmspeaker:0.4'
 }

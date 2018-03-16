@@ -1,7 +1,7 @@
 package com.nilhcem.androidthings.driver.mpr121;
 
 import com.google.android.things.pio.I2cDevice;
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 
 import java.io.IOException;
 
@@ -39,7 +39,7 @@ public class Mpr121 implements AutoCloseable {
     private I2cDevice device;
 
     public Mpr121(String i2cName) throws IOException {
-        PeripheralManagerService manager = new PeripheralManagerService();
+        PeripheralManager manager = PeripheralManager.getInstance();
         device = manager.openI2cDevice(i2cName, I2C_ADDRESS);
         init();
     }

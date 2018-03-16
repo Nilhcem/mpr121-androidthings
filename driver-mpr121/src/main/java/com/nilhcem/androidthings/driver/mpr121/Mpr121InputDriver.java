@@ -6,8 +6,8 @@ import android.util.Log;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 
-import com.google.android.things.userdriver.InputDriver;
 import com.google.android.things.userdriver.UserDriverManager;
+import com.google.android.things.userdriver.input.InputDriver;
 
 import java.io.IOException;
 
@@ -107,7 +107,7 @@ public class Mpr121InputDriver implements AutoCloseable {
      */
     public void register() {
         if (inputDriver == null) {
-            UserDriverManager manager = UserDriverManager.getManager();
+            UserDriverManager manager = UserDriverManager.getInstance();
             inputDriver = new InputDriver.Builder(InputDevice.SOURCE_CLASS_BUTTON)
                     .setName(DRIVER_NAME)
                     .setVersion(DRIVER_VERSION)
@@ -122,7 +122,7 @@ public class Mpr121InputDriver implements AutoCloseable {
      */
     public void unregister() {
         if (inputDriver != null) {
-            UserDriverManager manager = UserDriverManager.getManager();
+            UserDriverManager manager = UserDriverManager.getInstance();
             manager.unregisterInputDriver(inputDriver);
             inputDriver = null;
         }
