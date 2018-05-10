@@ -1,0 +1,19 @@
+{
+  "title": "MPR121",
+  "category": "Capacitive Touch Sensor",
+  "samples": [
+    "https://github.com/Nilhcem/mpr121-androidthings/tree/master/sample"
+  ],
+  "published-maven": {
+    "maven-url": "https://jcenter.bintray.com",
+    "groupid": "com.nilhcem.androidthings",
+    "artifactid": "driver-mpr121"
+  },
+  "compatible-with": [
+    {
+      "title": "Adafruit 12-Key Capacitive Touch Sensor Breakout - MPR121",
+      "photo": "https://cdn-shop.adafruit.com/970x728/1982-00.jpg",
+      "url": "https://www.adafruit.com/product/1982"
+    }
+  ]
+}
