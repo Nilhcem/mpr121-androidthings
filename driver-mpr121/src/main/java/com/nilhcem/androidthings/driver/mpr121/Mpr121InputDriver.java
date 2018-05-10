@@ -3,11 +3,11 @@ package com.nilhcem.androidthings.driver.mpr121;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.view.InputDevice;
 import android.view.KeyEvent;
 
 import com.google.android.things.userdriver.UserDriverManager;
 import com.google.android.things.userdriver.input.InputDriver;
+import com.google.android.things.userdriver.input.InputDriverEvent;
 
 import java.io.IOException;
 
@@ -18,12 +18,12 @@ public class Mpr121InputDriver implements AutoCloseable {
 
     // Driver parameters
     private static final String DRIVER_NAME = "Mpr121";
-    private static final int DRIVER_VERSION = 1;
 
     private Mpr121 peripheralDevice;
 
-    // Framework input driver
     private InputDriver inputDriver;
+    private InputDriverEvent inputEvent = new InputDriverEvent();
+
     // Key codes mapped to input channels
     private int[] keycodes;
 
@@ -44,13 +44,13 @@ public class Mpr121InputDriver implements AutoCloseable {
                         if (!inputStatus[i]) {
                             Log.d(TAG, "#" + i + " touched");
                             inputStatus[i] = true;
-                            emitInputEvents(keycodes[i], KeyEvent.ACTION_DOWN);
+                            emitInputEvents(keycodes[i], true);
                         }
                     } else {
                         if (inputStatus[i]) {
                             Log.d(TAG, "#" + i + " released");
                             inputStatus[i] = false;
-                            emitInputEvents(keycodes[i], KeyEvent.ACTION_UP);
+                            emitInputEvents(keycodes[i], false);
                         }
                     }
                 }
@@ -108,10 +108,9 @@ public class Mpr121InputDriver implements AutoCloseable {
     public void register() {
         if (inputDriver == null) {
             UserDriverManager manager = UserDriverManager.getInstance();
-            inputDriver = new InputDriver.Builder(InputDevice.SOURCE_CLASS_BUTTON)
+            inputDriver = new InputDriver.Builder()
                     .setName(DRIVER_NAME)
-                    .setVersion(DRIVER_VERSION)
-                    .setKeys(keycodes)
+                    .setSupportedKeys(keycodes)
                     .build();
             manager.registerInputDriver(inputDriver);
         }
@@ -132,11 +131,14 @@ public class Mpr121InputDriver implements AutoCloseable {
      * Emit input events through the registered driver to the
      * Android input framework using the defined set of key codes.
      */
-    private void emitInputEvents(int keyCode, int keyAction) {
+    private void emitInputEvents(int keyCode, boolean pressed) {
         if (inputDriver == null) {
             Log.w(TAG, "Driver not yet registered");
             return;
         }
-        inputDriver.emit(new KeyEvent[]{new KeyEvent(keyAction, keyCode)});
+
+        inputEvent.clear();
+        inputEvent.setKeyPressed(keyCode, pressed);
+        inputDriver.emit(inputEvent);
     }
 }
