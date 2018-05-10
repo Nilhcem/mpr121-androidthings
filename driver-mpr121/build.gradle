@@ -28,7 +28,7 @@ publish {
     userOrg = 'nilhcem'
     groupId = 'com.nilhcem.androidthings'
     artifactId = 'driver-mpr121'
-    publishVersion = '0.0.2'
+    publishVersion = '0.0.3'
     desc = 'Android Things driver for the MPR121 capacitive sensor controller.'
     website = 'https://github.com/Nilhcem/mpr121-androidthings'
 }
